@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+<span data-i18n="text_1">منظومة النمو بالإعلانات المدفوعة | إدارة وتحسين الإعلانات</span>
+</title>
+    <meta name="description"
+        content="نساعد الشركات على بناء حملات إعلانية مدفوعة، اختبارها وتحسينها بهدف الوصول إلى عملاء ونتائج تجارية قابلة للقياس.">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="منظومة النمو بالإعلانات المدفوعة | إدارة وتحسين الإعلانات">
+    <meta property="og:description"
+        content="نساعد الشركات على بناء حملات إعلانية مدفوعة، اختبارها وتحسينها بهدف الوصول إلى عملاء ونتائج تجارية قابلة للقياس.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_AR">
+
+    <!-- Favicon Placeholder (using SVG inline data URI) -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230C3C37'/><path d='M30 70 L45 50 L55 60 L75 30' stroke='%23B38F4D' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/><circle cx='75' cy='30' r='8' fill='%23B38F4D'/></svg>">
+
+    <!-- Google Fonts: Cairo (for Headings) & Tajawal (for Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="webgl-bg"></canvas>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <!-- Top Progress Line -->
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="container header-wrapper">
+            <a href="#" class="brand-logo-container">
+                <div class="brand-logo-wrapper">
+                    <img src="logo.png" alt="منظومة النمو المدفوع" class="brand-logo-img">
+                </div>
+                <div class="brand-logo-text-group">
+                    <span class="brand-logo">
+<span data-i18n="nav.logo_title">منظومة النمو</span>
+<span class="logo-accent">
+<span data-i18n="nav.logo_subtitle">المدفوع</span>
+</span></span>
+                    <span class="logo-subtitle">
+<span data-i18n="text_4">التسويق بالأداء والإعلانات المدفوعة</span>
+</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">
+<span data-i18n="nav.home">الرئيسية</span>
+</a></li>
+                    <li><a href="#problem" class="nav-link">
+<span data-i18n="nav.problem">المشكلة</span>
+</a></li>
+                    <li><a href="#services" class="nav-link">
+<span data-i18n="nav.service">الخدمة</span>
+</a></li>
+                    <li><a href="#methodology" class="nav-link">
+<span data-i18n="nav.methodology">المنهجية</span>
+</a></li>
+                    <li><a href="#investment" class="nav-link">
+<span data-i18n="nav.investment">الاستثمار</span>
+</a></li>
+                    <li><a href="#contact" class="nav-link btn-nav-cta">
+<span data-i18n="nav.contact">تواصل معي</span>
+</a></li>
+                    <li>
+                        <select id="language-switcher" class="lang-switcher">
+                            <option value="en">EN</option>
+                            <option value="ar">AR</option>
+                            <option value="fr">FR</option>
+                            <option value="es">ES</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECTION 1: HERO -->
+        <section id="hero" class="hero-section section-padding scroll-reveal">
+            <div class="container hero-wrapper">
+                <div class="hero-content">
+                    <span class="badge">
+<span data-i18n="hero.badge">منظومة نمو متكاملة</span>
+</span>
+                    <h1 class="hero-title">
+<span data-i18n="hero.title">نحوّل الإعلانات المدفوعة<br>إلى نظام <span class="text-gradient">قابل للقياس والنمو</span></span>
+</h1>
+                    <p class="hero-subtitle">
+<span data-i18n="hero.desc">نساعد الشركات على بناء حملات إعلانية مدفوعة، اختبارها وتحسينها بهدف الوصول
+                        إلى عملاء ونتائج تجارية قابلة للقياس.</span>
+</p>
+
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">
+<span data-i18n="hero.btn_start">ابدأ الآن</span>
+</a>
+                        <a href="#methodology" class="btn btn-secondary">
+<span data-i18n="hero.btn_method">اكتشف المنهجية</span>
+</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-abstract-art">
+                        <div class="circle circle-1"></div>
+                        <div class="circle circle-2"></div>
+                        <div class="art-card">
+                            <div class="card-header">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="card-body">
+                                <div class="bar-chart">
+                                    <div class="bar" style="height: 40%"></div>
+                                    <div class="bar" style="height: 60%"></div>
+                                    <div class="bar" style="height: 50%"></div>
+                                    <div class="bar" style="height: 85%"></div>
+                                </div>
+                                <div class="card-metrics">
+                                    <div class="metric">
+                                        <span class="m-val">ROAS 📈</span>
+                                        <span class="m-label">
+<span data-i18n="text_18">الهدف الفعلي</span>
+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down-indicator">
+                <span class="mouse-icon"><span class="mouse-wheel"></span></span>
+            </div>
+        </section>
+
+        <!-- SECTION 2: THE PROBLEM -->
+        <section id="problem" class="problem-section section-padding light-bg scroll-reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">
+<span data-i18n="text_19">لماذا لا تحقق بعض الحملات النتائج المتوقعة؟</span>
+</span>
+                    <h2 class="section-title">
+<span data-i18n="text_20">الإعلان وحده لا يصنع نتيجة</span>
+</h2>
+                    <p class="section-desc">
+<span data-i18n="text_21">تنفق الكثير من الشركات ميزانيات إعلانية دون تحقيق العائد المتوقع بسبب غياب
+                        التخطيط المتكامل وعناصر المنظومة الصحيحة.</span>
+</p>
+                </div>
+
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M16 16s-1.5-2-4-2-4 2-4 2" />
+                                <line x1="9" y1="9" x2="9.01" y2="9" />
+                                <line x1="15" y1="9" x2="15.01" y2="9" />
+                            </svg>
+                        </div>
+                        <h3>
+<span data-i18n="text_22">ثغرات الأداء الشائعة</span>
+</h3>
+                        <ul>
+                            <li>
+<span data-i18n="text_23">استهداف جمهور غير مناسب لنشاطك التجاري</span>
+</li>
+                            <li>
+<span data-i18n="text_24">عدم وجود عرض واضح وجذاب يدفع العميل للشراء</span>
+</li>
+                            <li>
+<span data-i18n="text_25">رسالة إعلانية لا تتوافق مع احتياج العميل الفعلي</span>
+</li>
+                        </ul>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                            </svg>
+                        </div>
+                        <h3>
+<span data-i18n="text_26">ثغرات التحويل والقياس</span>
+</h3>
+                        <ul>
+                            <li>
+<span data-i18n="text_27">ضعف صفحة الهبوط أو مسار التحويل وصعوبة الطلب</span>
+</li>
+                            <li>
+<span data-i18n="text_28">إنفاق الميزانيات بدون خطة اختبار حقيقية ومستمرة</span>
+</li>
+                            <li>
+<span data-i18n="text_29">عدم تتبع النتائج بشكل صحيح واتخاذ قرارات عشوائية</span>
+</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="problem-statement">
+                    <p class="statement-highlight">
+<span data-i18n="text_30">الحل</span>
+</p>
+                    <p class="statement-sub">
+<span data-i18n="text_31">منظومة عمل تبدأ بالفهم، ثم الاستراتيجية، ثم الاختبار، ثم التحليل والتحسين
+                        والتوسع.</span>
+</p>
+                    <p class="statement-emphasis">
+<span data-i18n="text_32">"الهدف ليس إنفاق المزيد على الإعلانات، بل بناء منظومة تربط الإنفاق
+                        الإعلاني بالهدف التجاري الحقيقي للنشاط."</span>
+</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THE OFFER (SOLUTION) & SECTION 4: WHAT CLIENT GETS -->
+        <section id="services" class="services-section section-padding scroll-reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">
+<span data-i18n="text_33">الخدمة والحلول</span>
+</span>
+                    <h2 class="section-title">
+<span data-i18n="text_34">منظومة إدارة وتحسين الإعلانات المدفوعة</span>
+</h2>
+                    <p class="section-desc">
+<span data-i18n="text_35">نساعدك على بناء وإدارة وتحسين حملاتك الإعلانية من مرحلة التحليل
+                        والاستراتيجية إلى الاختبار والتحسين والتوسع، مع التركيز على النتائج التجارية وليس مجرد زيادة
+                        الإنفاق الإعلاني.</span>
+</p>
+                </div>
+
+                <!-- What we do list (Offer scope) -->
+                <div class="offer-scope-container">
+                    <h3>
+<span data-i18n="text_36">تفاصيل العمل المسؤول عنه:</span>
+</h3>
+                    <div class="offer-scope-grid">
+                        <div class="scope-item"><span class="scope-dot"></span>
+<span data-i18n="text_37">تحليل النشاط والمنتج أو الخدمة بدقة</span>
+</div>
+                        <div class="scope-item"><span class="scope-dot"></span>
+<span data-i18n="text_38">تحديد ودراسة الجمهور المناسب بدقة</span>
+</div>
+                        <div class="scope-item"><span class="scope-dot"></span>
+<span data-i18n="text_39">تحليل المنافسين وحالة السوق في الخليج</span>
+</div>
+                        <div class="scope-item"><span class="scope-dot"></span>
+<span data-i18n="text_40">بناء الاستراتيجية الإعلانية المتكاملة</span>
+</div>
+                        <div class="scope-item"><span class="scope-dot"></span>
+<span data-i18n="text_41">تحديد أهداف الحملة ومؤشرات الأداء
+                            الرئيسية</span>
+</div>
+                        <div class="scope-item"><span class="scope-dot"></span>
+<span data-i18n="text_42">إعداد وبناء الحملات الإعلانية تقنيًا
+                            وفنيًا</span>
+</div>
+                        <div class="scope-item"><span class="scope-dot"></span>
+<span data-i18n="text_43">إعداد واختبار زوايا ورسائل إعلانية مختلفة</span>
+</div>
+                        <div class="scope-item"><span class="scope-dot"></span>
+<span data-i18n="text_44">اختبار الجماهير والاهتمامات المتنوعة</span>
+</div>
+                        <div class="scope-item"><span class="scope-dot"></span>
+<span data-i18n="text_45">متابعة وقراءة البيانات وتحليل الأداء
+                            اليومي</span>
+</div>
+                        <div class="scope-item"><span class="scope-dot"></span>
+<span data-i18n="text_46">تحسين الحملات ومسار التحويل بناءً على
+                            الأرقام</span>
+</div>
+                        <div class="scope-item"><span class="scope-dot"></span>
+<span data-i18n="text_47">إيقاف ما لا يعمل وتوسيع ما يثبت نجاحه
+                            بالبيانات</span>
+</div>
+                        <div class="scope-item"><span class="scope-dot"></span>
+<span data-i18n="text_48">تقديم تقارير دورية ومتابعة واضحة للخطوات</span>
+</div>
+                    </div>
+                </div>
+
+                <!-- Supported Platforms Bar -->
+                <div class="platforms-mini-showcase">
+                    <span class="plat-title">
+<span data-i18n="text_49">المنصات المدعومة:</span>
+</span>
+                    <div class="plat-items">
+                        <span class="plat-badge">Meta Ads</span>
+                        <span class="plat-badge">Google Ads</span>
+                        <span class="plat-badge">TikTok Ads</span>
+                        <span class="plat-badge">Snapchat Ads</span>
+                    </div>
+                    <p class="plat-note">
+<span data-i18n="text_50">تغطي باقة أتعاب الإدارة ($500/شهر) إدارة منصة إعلانية واحدة فقط من اختيارك.
+                        ويتم اختيار المنصة المناسبة بناءً على طبيعة النشاط، الجمهور، والهدف الإعلاني.</span>
+</p>
+                </div>
+
+                <!-- What you get cards -->
+                <div class="what-you-get-block">
+                    <div class="section-header text-center">
+                        <span class="section-subtitle">
+<span data-i18n="text_51">القيمة المضافة</span>
+</span>
+                        <h2 class="section-title">
+<span data-i18n="text_52">ماذا تحصل عليه؟</span>
+</h2>
+                        <p class="section-desc">
+<span data-i18n="text_53">خطوات متكاملة نغطيها بالكامل لتأمين مسار نمو ثابت لحملاتك الإعلانية.</span>
+</p>
+                    </div>
+
+                    <div class="deliverables-grid">
+                        <!-- Card 1 -->
+                        <div class="deliverable-card">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                </svg>
+                            </div>
+                            <h3>
+<span data-i18n="text_54">تحليل النشاط</span>
+</h3>
+                            <p>
+<span data-i18n="text_55">فهم عميق للمنتج أو الخدمة، دراسة السوق، تحديد الجمهور المنافس، وفهم سلوك المستهلكين قبل
+                                إطلاق أي حملة.</span>
+</p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="deliverable-card">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                                    <polyline points="2 17 12 22 22 17" />
+                                    <polyline points="2 12 12 17 22 12" />
+                                </svg>
+                            </div>
+                            <h3>
+<span data-i18n="text_56">الاستراتيجية</span>
+</h3>
+                            <p>
+<span data-i18n="text_57">رسم مسار واضح يحدد أهداف الحملات، تحديد قنوات الاستهداف، صياغة الرسائل الإعلانية، وتطوير
+                                زوايا الإقناع المناسبة.</span>
+</p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="deliverable-card">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="9" y1="3" x2="9" y2="21" />
+                                    <line x1="15" y1="3" x2="15" y2="21" />
+                                    <line x1="3" y1="9" x2="21" y2="9" />
+                                    <line x1="3" y1="15" x2="21" y2="15" />
+                                </svg>
+                            </div>
+                            <h3>
+<span data-i18n="text_58">إعداد الحملات</span>
+</h3>
+                            <p>
+<span data-i18n="text_59">بناء وهيكلة الحملات على المنصات الإعلانية وتأسيس التتبع التقني الدقيق لقياس كل تفاعل داخل
+                                الموقع.</span>
+</p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="deliverable-card">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                </svg>
+                            </div>
+                            <h3>
+<span data-i18n="text_60">الاختبار</span>
+</h3>
+                            <p>
+<span data-i18n="text_61">إخضاع الإعلانات والجمهور والزوايا وعروض التسعير للاختبار لمعرفة العناصر الحقيقية التي
+                                تحقق أفضل تكلفة للعميل.</span>
+</p>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="deliverable-card">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M23 6l-9.5 9.5-5-5L1 18" />
+                                    <polyline points="17 6 23 6 23 12" />
+                                </svg>
+                            </div>
+                            <h3>
+<span data-i18n="text_62">التحسين</span>
+</h3>
+                            <p>
+<span data-i18n="text_63">تحليل يومي للبيانات لإجراء تعديلات فورية ومستمرة على الميزانيات، والاستهداف، والإعلانات
+                                لرفع كفاءة الإنفاق الإعلاني.</span>
+</p>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="deliverable-card">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                    <polyline points="17 6 23 6 23 12" />
+                                    <line x1="1" y1="6" x2="1" y2="12" />
+                                </svg>
+                            </div>
+                            <h3>
+<span data-i18n="text_64">التوسع</span>
+</h3>
+                            <p>
+<span data-i18n="text_65">زيادة ميزانية الإنفاق الإعلاني بشكل تدريجي ومدروس في العناصر التي تثبت لغة الأرقام
+                                والبيانات نجاحها لتحقيق المزيد من النمو.</span>
+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: WORK METHODOLOGY, SECTION 6: TESTING, & SECTION 7: WHAT WE MEASURE -->
+        <section id="methodology" class="methodology-section section-padding light-bg scroll-reveal">
+            <div class="container">
+                <!-- Timeline Part -->
+                <div class="section-header text-center">
+                    <span class="section-subtitle">
+<span data-i18n="text_66">آلية التنفيذ</span>
+</span>
+                    <h2 class="section-title">
+<span data-i18n="text_67">منهجية العمل</span>
+</h2>
+                    <p class="section-desc">
+<span data-i18n="text_68">خطوات متسلسلة ومنظمة نعتمد عليها لتأسيس منظومة إعلانية ناجحة وقابلة للقياس
+                        المستمر.</span>
+</p>
+                </div>
+
+                <div class="steps-timeline">
+                    <!-- Step 1 -->
+                    <div class="step-card">
+                        <div class="step-index">01</div>
+                        <div class="step-content">
+                            <h3>
+<span data-i18n="text_69">الفهم والتحليل</span>
+</h3>
+                            <p>
+<span data-i18n="text_70">نفهم النشاط، المنتج، السوق، المنافسين والجمهور قبل اتخاذ أي قرار إعلاني.</span>
+</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card">
+                        <div class="step-index">02</div>
+                        <div class="step-content">
+                            <h3>
+<span data-i18n="text_71">الاستراتيجية</span>
+</h3>
+                            <p>
+<span data-i18n="text_72">نحدد الهدف، الجمهور، العرض، الرسائل والقنوات المناسبة للحملة.</span>
+</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card">
+                        <div class="step-index">03</div>
+                        <div class="step-content">
+                            <h3>
+<span data-i18n="text_73">الإطلاق</span>
+</h3>
+                            <p>
+<span data-i18n="text_74">نحوّل الاستراتيجية إلى حملات إعلانية منظمة وقابلة للقياس والتتبع التقني.</span>
+</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-card">
+                        <div class="step-index">04</div>
+                        <div class="step-content">
+                            <h3>
+<span data-i18n="text_75">الاختبار</span>
+</h3>
+                            <p>
+<span data-i18n="text_76">نختبر الإعلانات والجماهير والزوايا المختلفة بدل الاعتماد على التخمين والآراء الشخصية.</span>
+</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="step-card">
+                        <div class="step-index">05</div>
+                        <div class="step-content">
+                            <h3>
+<span data-i18n="text_77">التحليل والتحسين</span>
+</h3>
+                            <p>
+<span data-i18n="text_78">نقرأ البيانات ونحدد ما يعمل وما يحتاج إلى تعديل أو استبدال فوري لضمان كفاءة الصرف.</span>
+</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="step-card">
+                        <div class="step-index">06</div>
+                        <div class="step-content">
+                            <h3>
+<span data-i18n="text_79">التوسع</span>
+</h3>
+                            <p>
+<span data-i18n="text_80">نزيد الاستثمار تدريجيًا في العناصر التي تثبت قدرتها على تحقيق النتائج التجارية الفعلية.</span>
+</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testing Is Not Random Block -->
+                <div class="testing-block">
+                    <div class="section-header text-center">
+                        <span class="section-subtitle">
+<span data-i18n="text_81">منهجية التجريب</span>
+</span>
+                        <h2 class="section-title">
+<span data-i18n="text_82">الاختبار ليس عشوائيًا</span>
+</h2>
+                        <p class="section-desc">
+<span data-i18n="text_83">كل اختبار يجب أن يجيب عن سؤال واضح. نختبر الفرضيات، نقيس النتائج، ثم
+                            نستخدم البيانات لاتخاذ القرار التالي.</span>
+</p>
+                    </div>
+
+                    <div class="testing-grid">
+                        <div class="test-card-simple">
+                            <h4>
+<span data-i18n="text_84">اختبار الإعلان</span>
+</h4>
+                            <p>
+<span data-i18n="text_85">أي رسالة أو زاوية تسويقية تجذب الجمهور وتدفعهم للنقر والتفاعل بشكل أفضل؟</span>
+</p>
+                        </div>
+                        <div class="test-card-simple">
+                            <h4>
+<span data-i18n="text_86">اختبار الجمهور</span>
+</h4>
+                            <p>
+<span data-i18n="text_87">أي شريحة أو استهداف يستجيب للعرض وقيمته المقترحة بشكل أفضل ويحقق عائدًا أعلى؟</span>
+</p>
+                        </div>
+                        <div class="test-card-simple">
+                            <h4>
+<span data-i18n="text_88">اختبار العرض</span>
+</h4>
+                            <p>
+<span data-i18n="text_89">أي عرض، باقة سعرية، أو قيمة مضافة تقنع الزائر وتدفعه لاتخاذ إجراء فوري؟</span>
+</p>
+                        </div>
+                        <div class="test-card-simple">
+                            <h4>
+<span data-i18n="text_90">اختبار صفحة الهبوط</span>
+</h4>
+                            <p>
+<span data-i18n="text_91">هل الصفحة سريعة ومفهومة وتساعد على تحويل الزيارة إلى نتيجة فعلية (طلب أو تسجيل)؟</span>
+</p>
+                        </div>
+                    </div>
+
+                    <p class="testing-footer-text">
+<span data-i18n="text_92">"نحن لا نختبر لمجرد الاختبار؛ كل اختبار هدفه الوصول إلى قرار أفضل."</span>
+</p>
+                </div>
+
+                <!-- What We Measure Block -->
+                <div class="measuring-block">
+                    <div class="section-header text-center">
+                        <span class="section-subtitle">
+<span data-i18n="text_93">مؤشرات الأداء الحقيقية</span>
+</span>
+                        <h2 class="section-title">
+<span data-i18n="text_94">نقيس ما يؤثر على النمو</span>
+</h2>
+                        <p class="section-desc">
+<span data-i18n="text_95">نتجاهل الأرقام التجميلية السطحية ونركز على المؤشرات المرتبطة بنمو مشروعك
+                            مباشرة.</span>
+</p>
+                    </div>
+
+                    <div class="metrics-simple-grid">
+                        <div class="metric-simple-item">
+                            <span class="metric-num">01</span>
+                            <h4>
+<span data-i18n="text_96">تكلفة الحصول على العميل</span>
+</h4>
+                        </div>
+                        <div class="metric-simple-item">
+                            <span class="metric-num">02</span>
+                            <h4>
+<span data-i18n="text_97">معدل التحويل (Conversion Rate)</span>
+</h4>
+                        </div>
+                        <div class="metric-simple-item">
+                            <span class="metric-num">03</span>
+                            <h4>
+<span data-i18n="text_98">تكلفة النتيجة الفعلية</span>
+</h4>
+                        </div>
+                        <div class="metric-simple-item">
+                            <span class="metric-num">04</span>
+                            <h4>
+<span data-i18n="text_99">جودة وملاءمة العملاء المحتملين</span>
+</h4>
+                        </div>
+                        <div class="metric-simple-item">
+                            <span class="metric-num">05</span>
+                            <h4>
+<span data-i18n="text_100">العائد على الإنفاق الإعلاني (عند توفر البيانات)</span>
+</h4>
+                        </div>
+                        <div class="metric-simple-item">
+                            <span class="metric-num">06</span>
+                            <h4>
+<span data-i18n="text_101">أداء الإعلانات والجماهير والعروض</span>
+</h4>
+                        </div>
+                    </div>
+
+                    <p class="measuring-footer-text">
+<span data-i18n="text_102">"الهدف ليس الحصول على أرقام جميلة في لوحة الإعلانات، بل معرفة ما
+                        إذا كان الإنفاق الإعلاني يساهم فعليًا في نمو النشاط."</span>
+</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: WHY THIS METHODOLOGY & SECTION 9: RESPONSIBILITIES -->
+        <section class="trust-responsibilities-section section-padding scroll-reveal">
+            <div class="container">
+                <div class="why-us-block">
+                    <div class="section-header text-center">
+                        <span class="section-subtitle">
+<span data-i18n="text_103">منطلقات وقيم العمل</span>
+</span>
+                        <h2 class="section-title">
+<span data-i18n="text_104">لماذا هذه المنهجية؟</span>
+</h2>
+                        <p class="section-desc">
+<span data-i18n="text_105">نهتم ببناء علاقة تعاون واضحة ومبنية على مبادئ واقعية تضمن سلامة واستقرار
+                            حملاتك الإعلانية.</span>
+</p>
+                    </div>
+
+                    <div class="why-grid">
+                        <div class="why-card">
+                            <h3>
+<span data-i18n="text_106">القرارات مبنية على البيانات</span>
+</h3>
+                            <p>
+<span data-i18n="text_107">نتجنب الآراء الذاتية أو التوقعات الفردية؛ لغة الأرقام هي التي توجه حركة الميزانية
+                                والتعديلات.</span>
+</p>
+                        </div>
+                        <div class="why-card">
+                            <h3>
+<span data-i18n="text_108">الاختبار قبل التوسع</span>
+</h3>
+                            <p>
+<span data-i18n="text_109">لا نخاطر برأس مالك الإعلاني. نقوم باختبار الجوانب بميزانيات معتدلة وتوسيعها عند إثبات
+                                النجاح.</span>
+</p>
+                        </div>
+                        <div class="why-card">
+                            <h3>
+<span data-i18n="text_110">التركيز على الهدف التجاري</span>
+</h3>
+                            <p>
+<span data-i18n="text_111">نوجه الإعلانات لتوليد مبيعات وحجوزات وعملاء حقيقيين، وليس مجرد نقرات أو مشاهدات سطحية.</span>
+</p>
+                        </div>
+                        <div class="why-card">
+                            <h3>
+<span data-i18n="text_112">تحسين مستمر</span>
+</h3>
+                            <p>
+<span data-i18n="text_113">لا نقوم بتشغيل الحملة وتركها. نتابع الأداء يوميًا للتحسين المستمر وحل المشاكل التقنية
+                                والتنفيذية.</span>
+</p>
+                        </div>
+                        <div class="why-card">
+                            <h3>
+<span data-i18n="text_114">وضوح في العمل والتقارير</span>
+</h3>
+                            <p>
+<span data-i18n="text_115">نشارك معك البيانات والنتائج المحققة بوضوح كامل يتيح لك معرفة مسار ميزانيتك وعائدها
+                                الفعلي.</span>
+</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cooperation Responsibilities Block -->
+                <div class="cooperation-block">
+                    <div class="section-header text-center">
+                        <span class="section-subtitle">
+<span data-i18n="text_116">توزيع المسؤوليات</span>
+</span>
+                        <h2 class="section-title">
+<span data-i18n="text_117">مسؤوليات التعاون المشترك</span>
+</h2>
+                        <p class="section-desc">
+<span data-i18n="text_118">التنسيق والوضوح من البداية يضمن سرعة تنفيذ المهام ودقة النتائج.</span>
+</p>
+                    </div>
+
+                    <div class="resp-grid">
+                        <div class="resp-card my-resp">
+                            <h3>
+<span data-i18n="text_119">ما أتكفل به</span>
+</h3>
+                            <ul class="check-list">
+                                <li>
+<span data-i18n="text_120">الاستراتيجية الإعلانية وبناء مسار العميل</span>
+</li>
+                                <li>
+<span data-i18n="text_121">إعداد الحملات الإعلانية وتجهيزها تقنيًا</span>
+</li>
+                                <li>
+<span data-i18n="text_122">إدارة الحملات والميزانيات المخصصة</span>
+</li>
+                                <li>
+<span data-i18n="text_123">تحليل البيانات وسلوك الجمهور بدقة</span>
+</li>
+                                <li>
+<span data-i18n="text_124">الاختبار المستمر للرسائل والتصاميم</span>
+</li>
+                                <li>
+<span data-i18n="text_125">تحسين الأداء بشكل يومي وأسبوعي</span>
+</li>
+                                <li>
+<span data-i18n="text_126">التوسع المنظم بناءً على البيانات والفرص</span>
+</li>
+                                <li>
+<span data-i18n="text_127">تقديم التقارير الدورية ومشاركة التوصيات</span>
+</li>
+                            </ul>
+                        </div>
+
+                        <div class="resp-card client-resp">
+                            <h3>
+<span data-i18n="text_128">ما أحتاجه من العميل</span>
+</h3>
+                            <ul class="dot-list">
+                                <li>
+<span data-i18n="text_129">معلومات تفصيلية عن النشاط والخدمات والمنتجات</span>
+</li>
+                                <li>
+<span data-i18n="text_130">توضيح الأسعار والخصومات أو العروض الحالية</span>
+</li>
+                                <li>
+<span data-i18n="text_131">مشاركة معلومات عامة عن طبيعة العملاء السابقين</span>
+</li>
+                                <li>
+<span data-i18n="text_132">المحتوى المتوفر (فيديوهات وصور للمنتج أو الخدمة)</span>
+</li>
+                                <li>
+<span data-i18n="text_133">الموقع الإلكتروني أو صفحة الهبوط المطلوب العمل عليها</span>
+</li>
+                                <li>
+<span data-i18n="text_134">الميزانية الإعلانية المخصصة للإنفاق الإعلاني</span>
+</li>
+                                <li>
+<span data-i18n="text_135">منح الصلاحيات المطلوبة على الحسابات الإعلانية</span>
+</li>
+                                <li>
+<span data-i18n="text_136">الموافقة على التصاميم والاستراتيجية في الوقت المناسب</span>
+</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resp-disclaimer">
+                        <div class="disclaimer-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                            </svg>
+                        </div>
+                        <p><strong>
+<span data-i18n="text_137">ملاحظة أمان هامة:</span>
+</strong>
+<span data-i18n="text_138">أتعامل مع حسابات العميل الإعلانية من خلال الصلاحيات
+                            الرسمية للأعمال (Business Manager) على المنصات المختلفة، ولا أحتاج أبدًا إلى طلب كلمات
+                            المرور الخاصة بحساباتك الشخصية.</span>
+</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: INVESTMENT & PRICING -->
+        <section id="investment" class="investment-section section-padding light-bg scroll-reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">
+<span data-i18n="text_139">التكلفة والشفافية</span>
+</span>
+                    <h2 class="section-title">
+<span data-i18n="text_140">الاستثمار في المشروع</span>
+</h2>
+                    <p class="section-desc">
+<span data-i18n="text_141">عرض تسعير واضح وبسيط يناسب الأعمال الباحثة عن تأسيس منظومة نمو مستقرة.</span>
+</p>
+                </div>
+
+                <div class="investment-card">
+                    <div class="investment-price">
+                        <span class="price-title">
+<span data-i18n="text_142">أتعاب إدارة الإعلانات</span>
+</span>
+                        <div class="price-value">$500 <span class="price-period">
+<span data-i18n="text_143">/ شهر</span>
+</span></div>
+                        <span class="price-subtitle-scope"
+                            style="font-size: 0.95rem; opacity: 0.9; margin-top: 0.4rem; font-weight: 600;">
+<span data-i18n="text_144">(إدارة منصة
+                            إعلانية واحدة)</span>
+</span>
+                    </div>
+
+                    <div class="investment-details">
+                        <div class="detail-item">
+                            <span class="detail-label">
+<span data-i18n="text_145">مدة التعاون الأولية</span>
+</span>
+                            <span class="detail-value">
+<span data-i18n="text_146">شهران</span>
+</span>
+                        </div>
+                        <div class="detail-item-desc" style="margin-bottom: 1.5rem;">
+<span data-i18n="text_147">شهران هي المدة المقترحة للتأسيس، والاختبار المتكامل للجمهور والرسائل الإعلانية، والبدء في
+                            تحسين الأداء بصورة واقعية.</span>
+</div>
+
+                        <!-- خيارات إدارة منصات متعددة -->
+                        <div class="multi-platforms-pricing"
+                            style="border-top: 1px solid var(--border-color); padding-top: 1.8rem; margin-top: 1.8rem;">
+                            <h4
+                                style="font-family: var(--font-title); font-size: 1rem; color: var(--accent-primary); margin-bottom: 1.2rem; font-weight: 700; text-align: center;">
+<span data-i18n="text_148">خيارات أتعاب الإدارة حسب عدد المنصات:</span>
+</h4>
+
+                            <div class="platforms-pricing-grid"
+                                style="display: flex; flex-direction: column; gap: 0.8rem;">
+                                <!-- منصة واحدة -->
+                                <div class="platform-pricing-item"
+                                    style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 1rem 1.2rem; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                                        <span
+                                            style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">
+<span data-i18n="text_149">أتعاب
+                                            الإدارة</span>
+</span>
+                                        <span
+                                            style="font-size: 0.95rem; color: var(--text-dark); font-weight: 700;">
+<span data-i18n="text_150">منصة
+                                            إعلانية واحدة</span>
+</span>
+                                    </div>
+                                    <span
+                                        style="font-family: var(--font-title); font-weight: 800; color: var(--accent-gold); font-size: 1.15rem;">$500
+                                        <small style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">
+<span data-i18n="text_151">/
+                                            شهر</span>
+</small></span>
+                                </div>
+
+                                <!-- منصتان -->
+                                <div class="platform-pricing-item"
+                                    style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 1rem 1.2rem; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                                        <span
+                                            style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">
+<span data-i18n="text_152">أتعاب
+                                            الإدارة</span>
+</span>
+                                        <span
+                                            style="font-size: 0.95rem; color: var(--text-dark); font-weight: 700;">
+<span data-i18n="text_153">منصتان
+                                            إعلانيتان</span>
+</span>
+                                    </div>
+                                    <span
+                                        style="font-family: var(--font-title); font-weight: 800; color: var(--accent-gold); font-size: 1.15rem;">$800
+                                        <small style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">
+<span data-i18n="text_154">/
+                                            شهر</span>
+</small></span>
+                                </div>
+
+                                <!-- ثلاث منصات -->
+                                <div class="platform-pricing-item"
+                                    style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 1rem 1.2rem; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                                        <span
+                                            style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">
+<span data-i18n="text_155">أتعاب
+                                            الإدارة</span>
+</span>
+                                        <span
+                                            style="font-size: 0.95rem; color: var(--text-dark); font-weight: 700;">
+<span data-i18n="text_156">ثلاث
+                                            منصات إعلانية</span>
+</span>
+                                    </div>
+                                    <span
+                                        style="font-family: var(--font-title); font-weight: 800; color: var(--accent-gold); font-size: 1.15rem;">$1,100
+                                        <small style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">
+<span data-i18n="text_157">/
+                                            شهر</span>
+</small></span>
+                                </div>
+                            </div>
+
+                            <p
+                                style="font-size: 0.82rem; color: var(--text-muted); margin-top: 1.2rem; text-align: center; line-height: 1.5; font-weight: 600;">
+<span data-i18n="text_158">تنبيه: أتعاب إدارة فقط ولا تشمل الميزانية الإعلانية.</span>
+</p>
+                            <p
+                                style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem; text-align: center; line-height: 1.5;">
+<span data-i18n="text_159">يتم اختيار المنصة أو المنصات المناسبة بناءً على طبيعة النشاط والجمهور والهدف الإعلاني.</span>
+</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="budget-disclaimer">
+                    <p class="disclaimer-text"><strong>
+<span data-i18n="text_160">تنبيه هام:</span>
+</strong>
+<span data-i18n="text_161">الميزانية الإعلانية منفصلة عن أتعاب الإدارة
+                        ويتم دفعها مباشرة للمنصة الإعلانية.</span>
+</p>
+                </div>
+
+                <div class="investment-factors">
+                    <h3>
+<span data-i18n="text_162">عوامل قد تطلب تعديل نطاق العمل والأتعاب:</span>
+</h3>
+                    <p class="factors-intro">
+<span data-i18n="text_163">أتعاب إدارة الإعلانات لمنصة واحدة ($500) تغطي معظم المشاريع الناشئة
+                        والمتوسطة، ولكن قد يختلف نطاق العمل النهائي بناءً على:</span>
+</p>
+                    <div class="factors-grid">
+                        <div class="factor">
+<span data-i18n="text_164">حجم النشاط التجاري</span>
+</div>
+                        <div class="factor">
+<span data-i18n="text_165">الهدف الإعلاني المطلوب</span>
+</div>
+                        <div class="factor">
+<span data-i18n="text_166">عدد المنصات الإعلانية المستهدفة</span>
+</div>
+                        <div class="factor">
+<span data-i18n="text_167">حجم الميزانية الإعلانية المرصودة</span>
+</div>
+                        <div class="factor">
+<span data-i18n="text_168">حجم وضخامة العمل المطلوب</span>
+</div>
+                        <div class="factor">
+<span data-i18n="text_169">عدد الحملات النشطة المطلوب إدارتها</span>
+</div>
+                        <div class="factor">
+<span data-i18n="text_170">مستوى التحليل والتقارير المتقدم المطلوبة</span>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 10: FINAL CTA & CONTACT -->
+        <section id="contact" class="cta-contact-section section-padding scroll-reveal">
+            <div class="container">
+                <div class="cta-contact-layout">
+                    <!-- CTA Info & Roadmap -->
+                    <div class="cta-info">
+                        <span class="badge badge-accent">
+<span data-i18n="text_171">البداية هنا</span>
+</span>
+                        <h2 class="cta-title">
+<span data-i18n="text_172">هل أنت مستعد لبناء منظومة إعلانية أكثر وضوحًا؟</span>
+</h2>
+                        <p class="cta-desc">
+<span data-i18n="text_173">لنبدأ بفهم نشاطك، هدفك، والجمهور الذي تريد الوصول إليه.</span>
+</p>
+
+                        <div class="roadmap-box">
+                            <h3>
+<span data-i18n="text_174">رحلة تأسيس منظومتك:</span>
+</h3>
+                            <ul class="roadmap-list">
+                                <li><span>
+<span data-i18n="text_175">فهم نشاطك وأهدافك بدقة</span>
+</span></li>
+                                <li><span>
+<span data-i18n="text_176">تحليل الوضع الحالي للحملات والمنافسين</span>
+</span></li>
+                                <li><span>
+<span data-i18n="text_177">تحديد الفرص التسويقية المتاحة</span>
+</span></li>
+                                <li><span>
+<span data-i18n="text_178">بناء استراتيجية مخصصة ومسار العميل</span>
+</span></li>
+                                <li><span>
+<span data-i18n="text_179">تجهيز وإعداد الحملات وأكواد القياس الفنية</span>
+</span></li>
+                                <li><span>
+<span data-i18n="text_180">الإطلاق التجريبي واختبار الفرضيات</span>
+</span></li>
+                                <li><span>
+<span data-i18n="text_181">التحسين بناءً على الأداء الفعلي</span>
+</span></li>
+                                <li><span>
+<span data-i18n="text_182">التوسع التدريجي لتحقيق النمو المستدام</span>
+</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact Box & Personal Profile Card -->
+                    <div class="contact-box">
+                        <div class="contact-box-wrapper">
+                            <!-- Column 1: Image container -->
+                            <div class="contact-image-container">
+                                <img src="profile.jpg" alt="عادل مقدمي" class="contact-profile-img">
+                            </div>
+
+                            <!-- Column 2: Info & Buttons container -->
+                            <div class="contact-info-container">
+                                <!-- Personal Identity Area -->
+                                <div class="profile-card">
+                                    <div class="profile-avatar-container">
+                                        <!-- SVG avatar with profile.jpg layer -->
+                                        <svg class="profile-avatar" viewBox="0 0 100 100" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="50" cy="50" r="48" fill="#F7F4EE" stroke="#B38F4D"
+                                                stroke-width="2" />
+                                            <path
+                                                d="M50 35 C56.6274 35 62 29.6274 62 23 C62 16.3726 56.6274 11 50 11 C43.3726 11 38 16.3726 38 23 C38 29.6274 43.3726 35 50 35 Z"
+                                                fill="#0C3C37" />
+                                            <path
+                                                d="M18 78 C18 63 32 50 50 50 C68 50 82 63 82 78 C82 82 82 85 82 85 H18 C18 85 18 82 18 78 Z"
+                                                fill="#0C3C37" />
+                                            <path d="M50 48 L46 54 H54 L50 48 Z" fill="#B38F4D" />
+                                            <!-- Fallback profile image layer -->
+                                            <image href="profile.jpg" x="2" y="2" width="96" height="96"
+                                                clip-path="url(#circleClipMobile)"
+                                                onerror="this.style.display='none'" />
+                                            <clipPath id="circleClipMobile">
+                                                <circle cx="50" cy="50" r="48" />
+                                            </clipPath>
+                                        </svg>
+                                    </div>
+                                    <div class="profile-info">
+                                        <span class="profile-meta">
+<span data-i18n="text_183">تنفيذ وإدارة</span>
+</span>
+                                        <h3 class="profile-name">
+<span data-i18n="text_184">عادل مقدمي</span>
+</h3>
+                                        <p class="profile-title">
+<span data-i18n="text_185">متخصص في إدارة وتحسين الإعلانات المدفوعة</span>
+</p>
+                                    </div>
+                                </div>
+
+                                <div class="contact-links-container">
+                                    <h3>
+<span data-i18n="text_186">تواصل معنا الآن لمناقشة مشروعك:</span>
+</h3>
+                                    <p class="contact-subtext">
+<span data-i18n="text_187">اختر وسيلة التواصل المفضلة لديك وسنقوم بالرد عليك في أقرب
+                                        وقت.</span>
+</p>
+
+                                    <!-- WhatsApp CTA Button -->
+                                    <a href="https://wa.me/212603653501?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D9%88%D8%AA%D8%AD%D8%B3%D9%8a%D9%86%20%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AF%D9%81%D9%88%D8%B9%D8%A9."
+                                        class="contact-btn whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                                        <span class="contact-btn-icon">
+                                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                                <path
+                                                    d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.993L2 22l5.135-1.347a9.922 9.922 0 0 0 4.877 1.28h.005c5.505 0 9.989-4.478 9.99-9.985a9.983 9.983 0 0 0-9.995-9.948zm5.783 14.12c-.25.703-1.442 1.3-1.977 1.364-.486.059-1.121.096-3.238-.782-2.71-1.123-4.46-3.882-4.595-4.062-.135-.18-1.095-1.455-1.095-2.775 0-1.32.69-1.966.936-2.228c.246-.261.54-.327.72-.327.18 0 .36.002.517.01.16.007.375-.062.587.45.22.532.753 1.838.818 1.97.066.13.109.283.022.456-.087.174-.131.282-.26.435-.13.153-.273.34-.39.456-.13.12-.267.25-.114.51.152.26.678 1.118 1.454 1.81.996.89 1.833 1.166 2.093 1.295.26.13.413.109.566-.065.152-.174.653-.761.826-1.02.174-.26.348-.217.587-.13.239.087 1.52.717 1.782.847.26.13.435.196.5.304.065.109.065.63-.185 1.333z" />
+                                            </svg>
+                                        </span>
+                                        <span class="contact-btn-text">
+<span data-i18n="text_188">تواصل معنا عبر واتساب</span>
+</span>
+                                    </a>
+
+                                    <!-- Email CTA Button -->
+                                    <a href="mailto:amk735151@gamil.com" class="contact-btn email-btn"
+                                        style="flex-direction: column; padding: 0.85rem 1rem; height: auto;">
+                                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                            <span class="contact-btn-icon">
+                                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path
+                                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                                    <polyline points="22,6 12,13 2,6" />
+                                                </svg>
+                                            </span>
+                                            <span class="contact-btn-text">
+<span data-i18n="text_189">راسلنا عبر البريد الإلكتروني</span>
+</span>
+                                        </div>
+                                        <span class="contact-btn-email"
+                                            style="font-size: 0.82rem; font-weight: 500; margin-top: 0.3rem; opacity: 0.95; direction: ltr; font-family: var(--font-body);">amk735151@gamil.com</span>
+                                    </a>
+                                </div>
+
+                                <div class="social-links">
+                                    <span class="social-title">
+<span data-i18n="text_190">تواصل اجتماعي:</span>
+</span>
+                                    <div class="social-icons">
+                                        <a href="https://www.facebook.com/share/1DzhLr21P8/" target="_blank"
+                                            rel="noopener noreferrer" aria-label="Facebook">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path
+                                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                            </svg>
+                                        </a>
+                                        <a href="https://www.instagram.com/adilmkadmi.ads?igsh=ZTQ0bGZzazdnbzhn"
+                                            target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path
+                                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-wrapper">
+            <div class="footer-brand">
+                <span class="footer-logo">
+<span data-i18n="text_191">منظومة النمو المدفوع</span>
+</span>
+                <span class="footer-sublogo">
+<span data-i18n="text_192">التسويق بالأداء والإعلانات المدفوعة</span>
+</span>
+                <p>
+<span data-i18n="text_193">منظومة لإدارة وتحسين الإعلانات المدفوعة</span>
+</p>
+                <span class="footer-author">
+<span data-i18n="text_194">تنفيذ وإدارة: عادل مقدمي</span>
+</span>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://wa.me/212603653501" target="_blank" rel="noopener noreferrer">
+<span data-i18n="text_195">واتساب</span>
+</a>
+                <a href="mailto:amk735151@gamil.com">
+<span data-i18n="text_196">البريد الإلكتروني</span>
+</a>
+                <a href="https://www.facebook.com/share/1DzhLr21P8/" target="_blank"
+                    rel="noopener noreferrer">
+<span data-i18n="text_197">فيسبوك</span>
+</a>
+                <a href="https://www.instagram.com/adilmkadmi.ads?igsh=ZTQ0bGZzazdnbzhn" target="_blank"
+                    rel="noopener noreferrer">
+<span data-i18n="text_198">إنستغرام</span>
+</a>
+            </div>
+
+            <div class="footer-copyright">
+                <p>
+<span data-i18n="text_199">&copy; 2026 عادل مقدمي — جميع الحقوق محفوظة.</span>
+</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="الرجوع للأعلى">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5" />
+            <polyline points="5 12 12 5 19 12" />
+        </svg>
+    </button>
+
+    <!-- External JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+    <script src="experience.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+
+</html>
